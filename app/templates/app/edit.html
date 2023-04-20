@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert</title>
+</head>
+<body>
+    <center>
+        <!-- student_form.html -->
+    <h1>Update Form</h1>
+    {% if key2 %}
+<form method="post" action="{% url 'update' pk=key2.id %}">
+    {% csrf_token %}
+    <label for="first_name">First name:</label>
+    <input type="text" name="first_name" required value="{{key2.first_name}}">
+    <br>
+    <label for="last_name">Last name:</label>
+    <input type="text" name="last_name" required value="{{key2.last_name}}">
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" name="email" required value="{{key2.email}}">
+    <br>
+    <label for="contact_number">Contact number:</label>
+    <input type="tel" name="contact_number" required value="{{key2.contact_number}}">
+    <br>
+    <input type="submit" value="update">
+  </form>
+  {% endif%}
+    </center>
+</body>
+</html>
